@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Run DuckStation
+xterm -e /opt/duckstation/AppRun
