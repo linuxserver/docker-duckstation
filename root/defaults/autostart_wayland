@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # Run DuckStation
-foot -e /opt/duckstation/AppRun
+/opt/duckstation/AppRun
