@@ -20,7 +20,7 @@ RUN \
     https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/duckstation-logo.png && \
   echo "**** install packages ****" && \
   DOWNLOAD_URL=$(curl -sX GET "https://api.github.com/repos/stenzek/duckstation/releases/latest" \
-    | awk -F '(": "|")' '/browser.*n-arm64.AppImage/ {print $3}') && \
+    | jq -r 'first(.assets[].browser_download_url | select(test("n-arm64.AppImage")))') && \
   curl -o \
     /tmp/duck.app -L \
     "${DOWNLOAD_URL}" && \
